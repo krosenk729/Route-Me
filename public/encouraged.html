@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Route Me</title>
+	<meta charset="utf-8">
+
+	<meta name="description" content="Grateful for the chance to make you a site. Stressed? You aren't alone">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+	<header class="header center">
+		<h1><a href="/">A.W.E.S.O.M.E.</a></h1>
+		<p>Welcome, Good Vibe Tribe</p>
+		<p>Let's share encouragement with those who need it</p>
+	</header>
+	<main class="main clearfix">
+		<div class="lhs">
+			<form id="user-grateful-word-form">
+				<h2>Gratitudes</h2>
+				<label for="user-grateful-word"><strong>One-word</strong> gratitudes keep the vibes flowing. What are you grateful for right now?</label>
+				<input type="text" pattern="(\w+)(\s\w+){0,1}" name="grateful-word" id="user-grateful-word">
+				<button class="bt bt-main" type="submit">Thankful</button>
+			</form>
+
+			<h2>Yes, And...</h2>
+			<p>...turns out the whole world has something to be grateful for. Check out what some of those things are</p>
+			<ul class="other-grateful-block other-block other-block-rhs">
+				<li class="other-grateful">green lights</li>
+				<li class="other-grateful">family</li>
+				<li class="other-grateful">work</li>
+				<li class="other-grateful">finances</li>
+			</ul>
+		</div>
+		<div class="rhs">
+			<h2>Spread The Encouragement</h2>
+			<p>Some people are feeling stress about these things, what do you want to say to encourage them?</p>
+			<ul class="other-stress-block other-block other-block-lhs">
+				<li class="other-stress">school</li>
+				<li class="other-stress">family</li>
+				<li class="other-stress">work</li>
+				<li class="other-stress">finances</li>
+			</ul>
+			<form id="user-stress-encourage-form">
+				<label for="user-grateful-word"><strong>Hey, I just want you to know that...</strong></label>
+				<textarea name="stress-encourage" id="user-stress-encourage" rows="2" placeholder="It will be okay. I'm glad you are here. Thanks for being you"></textarea>
+				<button class="bt bt-main" type="submit">Send Love</button>
+			</form>
+			<br>
+			<h2>Hear the Echo</h2>
+			<ul class="stress-encourage-block text-block-lhs">
+			</ul>
+		</div>
+	</main>
+
+	<!-- Library Files -->
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/socket.io.js"></script>
+	<script src="lib/index.js"></script>
+</body>
+</html>

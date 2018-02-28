@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Route Me</title>
+	<meta charset="utf-8">
+
+	<meta name="description" content="Grateful for the chance to make you a site. Stressed? You aren't alone">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+	<header class="header center">
+		<h1><a href="/">It Will Be O.K.</a></h1>
+		<p>Stress is bummer.</p>
+		<p>Let's combat it.</p>
+	</header>
+	<main class="main clearfix">
+		<div class="lhs">
+			<form id="user-stress-word-form">
+				<h2>Let It Out</h2>
+				<label for="user-stress-word">In <strong>a word</strong>, what are you stressed about?</label>
+				<input type="text" pattern="\w+" name="stress-word" id="user-stress-word">
+				<button class="bt bt-main">Stress</button>
+			</form>
+			<h2>You Are Not Alone</h2>
+			<p>Here is what other people are stressed about...</p>
+			<ul class="other-stress-block other-block other-block-lhs">
+				<li class="other-stress">school</li>
+				<li class="other-stress">family</li>
+				<li class="other-stress">work</li>
+				<li class="other-stress">finances</li>
+			</ul>
+			
+			<h2>Breathe In. Breathe Out. Listen.</h2>
+			<p>Here is what other people want you to know about your stress...</p>
+			<ul class="stress-encourage-block text-block-lhs">
+			</ul>
+		</div>
+		<div class="rhs">
+			<form id="user-grateful-word-form">
+				<h2>Rise Up</h2>
+				<label for="user-grateful-word"><strong>Gratitude</strong> fights away stress. What one-word thing are you grateful for?</label>
+				<input type="text" pattern="(\w+)(\s\w+){0,1}" name="grateful-word" id="user-grateful-word">
+				<button class="bt bt-main" type="submit">Thankful</button>
+				<label>It can be big or small. Sometimes the smallest things are the most powerful</label>
+			</form>
+			<h2>Better Together</h2>
+			<p>Here is what other people are grateful for... <span id="grateful-submitted">(hey look, yours made the list too!)</span></p>
+			<ul class="other-grateful-block other-block other-block-rhs">
+				<li class="other-grateful">green lights</li>
+				<li class="other-grateful">family</li>
+				<li class="other-grateful">work</li>
+				<li class="other-grateful">finances</li>
+			</ul>
+			<br>
+			<br>
+			<h4 class="progress">Feel Better? <a class="bt bt-inline-linktxt" href="encouraged">Encourage Others</a></h4>
+		</div>
+	</main>
+	<!-- Library Files -->
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/socket.io.js"></script>
+	<script src="lib/index.js"></script>
+</body>
+</html>

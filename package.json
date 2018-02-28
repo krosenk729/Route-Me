@@ -1,0 +1,29 @@
+{
+  "name": "Route-Me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2",
+    "socket.io": "^2.0.4"
+  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krosenk729/Route-Me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krosenk729/Route-Me/issues"
+  },
+  "homepage": "https://github.com/krosenk729/Route-Me#readme"
+}

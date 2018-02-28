@@ -1,0 +1,256 @@
+$c-ltgreen: #B5F5CE;
+$c-ltpink: #FFC0C8;
+$c-dkblue: #1A344D;
+$c-dkgreen: #3A3F15;
+$c-offwhite: #FFF9F6;
+$c-white:#FFFFFF; 
+$c-error: #EE2D27;
+
+
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Montserrat:400,800');
+$f-serf: 'Crimson Text', serif;
+$f-sns: 'Montserrat', sans-serif;
+
+///////////////////////////////////////////
+// Animations & Mixins
+
+@keyframes jumpin{
+  10% { transform: scale(1); }
+  13% { transform: scale(0.9); }
+  16% { transform: scale(1); }
+  18% { transform: scale(0.8); }
+  22% { transform: scale(1); }
+}
+.jumper{
+	-webkit-animation-name: jumpin; /* Safari 4.0 - 8.0 */
+	-webkit-animation-duration: 8s; /* Safari 4.0 - 8.0 */
+	animation-name: jumpin;
+	animation-duration: 8s;
+	transition: 1s;
+}
+
+@mixin boxing( $val: none !important ){
+	box-shadow: $val;
+	-moz-box-shadow: $val;
+	-webkit-box-shadow: $val;
+	outline: $val;
+}
+
+@mixin transition($time, $time_fun, $which:all){
+	transition: $time $time_fun $which;
+	-webkit-transition: $time $time_fun $which;
+	-moz-transition: $time $time_fun $which;
+	-o-transition: $time $time_fun $which;
+}
+
+//////////////////////////////////////////////////
+// Setup
+
+*{
+	box-sizing: border-box;
+	color: $c-dkblue;
+} 
+
+html, body{
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{font-family: $f-sns;}
+h1, h2, h3, h4, h5, h6, b, strong{font-weight: bold;} 
+em, i, dfn {font-style: italic;} 
+h1{font-size: 2.5em;}
+h2{font-size: 2em;} 
+h3{font-size: 1.75em;} 
+h4{font-size: 1.5em;} 
+h5{font-size: 1.25em;} 
+h6{font-size: 1em;} 
+
+.center{
+	text-align: center;
+}
+
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+//////////////////////////////////////////////////
+// Framework
+
+.header{
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	font-family: $f-sns;
+
+	a{
+		text-decoration: none;
+	}
+} 
+
+.main{
+	display: inline-flex;
+	width: 100%;
+	font-family: $f-serf;
+	@extend .clearfix;
+	// display: flex;
+	// justify-content: space-evenly;
+	// align-items: stretch;
+	// align-content: stretch;
+} 
+
+%half{
+	// flex-basis: 50%;
+	// flex-grow: 1;
+	// flex-shrink: 1;
+	width: 50%;
+	padding: 2em;
+	padding-top: 200px;
+	float: left;
+	min-height: 100vh;
+	position: relative;
+} 
+.lhs{
+	@extend %half;
+	background-color: $c-ltgreen;
+} 
+
+.rhs{
+	@extend %half;
+} 
+
+//////////////////////////////////////////////////
+// Buttons
+
+button, a.bt{
+	background: none;
+	border: none;
+	border-radius: .3em;
+	padding: .5em 1em;
+	text-decoration: none;
+	@include transition(1.5s, ease-out);
+
+	&:hover{
+		cursor: pointer;
+	}
+
+	&.bt-linktxt{
+		width: 100%;
+		font-size: 1.7em;
+		padding: 2em;
+	}
+
+	&.bt-inline-linktxt{
+		padding: 0;
+		display: inline-block;
+		&:hover{
+			text-decoration: underline;
+			color: darken($c-ltgreen, 10%);
+		}
+	}
+
+	&.bt-main{
+		font-weight: bold;
+		font-size: 1.2em;
+		margin: .2em;
+		background: $c-dkblue;
+		color: $c-offwhite;
+	}
+
+	&.bt-alt{
+		font-weight: bold;
+		font-size: 1.2em;
+		margin: .2em;
+		background: $c-offwhite;
+		color: $c-dkgreen;
+	}
+}
+
+
+//////////////////////////////////////////////////
+// Forms
+
+form{
+	label{
+		display: block;
+	}
+	input, textarea{
+		background: none;
+		resize: none;
+		border: none;
+		border-bottom: 4px solid $c-dkblue;
+		font-size: 1.4em;
+		outline: none !important;
+		width: 100%;
+		max-width: 350px;
+		&:-webkit-input-placeholder,
+		&:placeholder{
+			font-size: smaller;
+		}
+		&:focus{
+			border-bottom: 4px solid $c-offwhite;
+		}
+		&:invalid{
+			border-bottom: 4px solid $c-ltpink;
+			color: $c-error;
+		}
+	}
+}
+
+.progress{
+	position: absolute;
+	bottom: 0;
+}
+
+.float-bt-right{
+	position: fixed;
+	bottom: .2em;
+	right: .2em;
+	margin: 0em;
+	padding: 1em .4em .4em 1em;
+	background: $c-white;
+	opacity: .85;
+	border-top-left-radius: 25%;
+	a{
+		color: $c-dkgreen;
+	}
+}
+
+
+//////////////////////////////////////////////////
+// Chips
+
+ul{
+	margin: 0;
+}
+
+%other-block{
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1.8;
+	height: 32px;
+	padding: 0 12px;
+	border-radius: 16px;
+	margin-bottom: .2em;
+	margin-right: .2em;
+}
+.other-block-lhs li{
+	@extend %other-block;
+	background: $c-offwhite;
+}
+.other-block-rhs li{
+	@extend %other-block;
+	background: $c-dkblue;
+	color: $c-offwhite;
+}
+
+.text-block-lhs{
+	min-height: 150px;
+}
+
+.other-stress-encourage{
+	padding: .7em .1em;
+	font-size: 1.2em;
+}
