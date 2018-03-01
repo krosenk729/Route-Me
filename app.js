@@ -78,6 +78,7 @@ io.on('connection', function(socket){
 
 // Listener
 // ===========================================================
-server.listen(3000, function(){
+app.set('port', (process.env.PORT || 3000));
+app.listen(app.get('port'), function(){
 	console.log('listening on 3000');
 });
