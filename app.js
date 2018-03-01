@@ -79,6 +79,6 @@ io.on('connection', function(socket){
 // Listener
 // ===========================================================
 const PORT = process.env.PORT || 3000;
-server.listen(3000, function(){
+server.listen(PORT, function(){
 	console.log('listening on 3000');
 });
