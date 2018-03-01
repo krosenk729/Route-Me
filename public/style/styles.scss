@@ -120,6 +120,7 @@ h6{font-size: 1em;}
 	@extend %half;
 } 
 
+
 //////////////////////////////////////////////////
 // Buttons
 
@@ -253,4 +254,17 @@ ul{
 .other-stress-encourage{
 	padding: .7em .1em;
 	font-size: 1.2em;
+}
+
+
+//////////////////////////////////////////////////
+// Mobile
+
+@media screen and (max-width: 650px) {
+	.main{ display: block; }
+	%half{ width: 100%; min-height: 0; padding: .5em}
+	.lhs{ padding-top: 140px }
+	.progress{ position: relative;}
+	button.bt-linktxt, a.bt.bt-linktxt{padding: .5em}
+
 }
